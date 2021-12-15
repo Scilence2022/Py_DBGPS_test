@@ -31,7 +31,7 @@ options = options + r'      -i, --input   <input file>              The decoded 
 options = options + r'      -o, --output  <output file>             Output file' + '\n'
 
 options = options + r'      -d, --chunk_size  <size>                Chunk size, default = 35 (bytes)' + '\n'
-options = options + r'      -n, --chunk_num  <number>               Chunk number, default = 210,000 (for testing only)' + '\n'
+options = options + r'      -n, --chunk_num  <number>               Chunk number, default = 194,818 (for testing only)' + '\n'
 options = options + r'      --seed    <seed>                        Fountain random seed, default 1' + '\n'
 
 options = options + r'      --index_bytes  <number>                 Bytes of index codes, default = 4' + '\n'
