@@ -21,6 +21,7 @@ input_file = work_dir + r'P10_5_BDDP210000009-1A_join_pear.fq.assembled.fastq.cl
 
 muscle = r'/home/lifu/software/muscle3.8.31/muscle3.8.31_i86linux64 '  #Location of muscle program
 
+os.system('mkdir ' + work_dir + 'muscle')
 
 max_seq_copy = 100000
 
@@ -60,8 +61,8 @@ a = time.perf_counter()
 print('Running Muscle....')
 for clu in clu_seqs:
     clu_seqs_file = work_dir + 'muscle/' + str(clu)
-    os.system(muscle + r' -align ' + clu_seqs_file + r' -output ' + clu_seqs_file + r'.aln')
-    #os.system(muscle + r' -in ' + clu_seqs_file + r' -out ' + clu_seqs_file +  r'.aln')
+    #os.system(muscle + r' -align ' + clu_seqs_file + r' -output ' + clu_seqs_file + r'.aln') #muscle5
+    os.system(muscle + r' -in ' + clu_seqs_file + r' -out ' + clu_seqs_file +  r'.aln') # muscle 3
 res['muti-align'].append(time.perf_counter() - a)
 
 a = time.perf_counter()
