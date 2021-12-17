@@ -1093,3 +1093,14 @@ def chunks_data(ft, chunk_nums):
             data = xor(data, ft.chunk(num))
     return data
 
+def filter_con_seqs(con_seqs, dps_seqs, p1 = 50, p2 = 150):
+    new_con_seqs = []
+    deG = DeBruijnGraph()
+    for dp in dps_seqs:
+        deG.add_seq(dps_seqs[dp])
+
+    for seq in con_seqs:
+        if strand_in_graph(seq[p1:p2], deG):
+            new_con_seqs.append(seq)
+
+    return new_con_seqs
