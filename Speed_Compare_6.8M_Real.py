@@ -113,9 +113,9 @@ for clu in clu_seqs:
 res['consensus'].append(time.perf_counter() - a)
 
 dec_num = check_cons(clu_cons_seqs, dps_seqs)
-for seq in dps_seqs:
-    if seq_in_seqs(dps_seqs[seq], clu_cons_seqs):
-        dec_num = dec_num + 1
+#for seq in dps_seqs:
+#    if seq_in_seqs(dps_seqs[seq], clu_cons_seqs):
+#        dec_num = dec_num + 1
 res['Sr'] = dec_num
 
 
