@@ -112,7 +112,7 @@ for clu in clu_seqs:
     #     i = i + 1
 res['consensus'].append(time.perf_counter() - a)
 
-dec_num = 0
+dec_num = check_cons(clu_cons_seqs, dps_seqs)
 for seq in dps_seqs:
     if seq_in_seqs(dps_seqs[seq], clu_cons_seqs):
         dec_num = dec_num + 1
