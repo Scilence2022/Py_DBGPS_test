@@ -1104,3 +1104,31 @@ def filter_con_seqs(con_seqs, dps_seqs, p1 = 50, p2 = 150):
             new_con_seqs.append(seq)
 
     return new_con_seqs
+
+
+
+def check_cons(con_seqs, dps_seqs):
+    kmer_clu_seqs = {}
+
+    print('Building kmer clu_con_seq rels')
+    for i, seq in enumerate(con_seqs):
+        kms = kmers_of_str(seq, 16)
+        for km in kms:
+            if km in kmer_clu_seqs:
+                kmer_clu_seqs[km].append(i)
+            else:
+                kmer_clu_seqs[km] = [i]
+
+    ss = 0
+
+    print('Checking dps one by one')
+    for dp in dps_seqs:
+        #print('.', end='')
+        id_km = dps_seqs[dp][0:16]
+        if id_km in kmer_clu_seqs:
+            for dgs in kmer_clu_seqs[id_km]:
+                if dps_seqs[dp] in con_seqs[dgs]:
+                    ss = ss + 1
+                    #print('\^')
+                    break
+    return ss
