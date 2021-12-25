@@ -4,7 +4,7 @@
 
 ============================================================================================================================
 
-The Fountain codes is modified from [https://github.com/dbieber/fountaincode](https://github.com/dbieber/fountaincode)
+The Fountain code is modified from [https://github.com/dbieber/fountaincode](https://github.com/dbieber/fountaincode)
 
 ============================================================================================================================
 
